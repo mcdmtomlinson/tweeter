@@ -15,21 +15,19 @@ nav {
   align-items: center;
 }
 
-span {
+.nav-title {
   font-family: "Bungee";
 }
 
-p {
-  margin: 0;
-
-}
  i {
-  color: red;
+  color: yellow;
 
  }
 
- div {
+ .nav-tweet {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: fixed;
+  top: 0;
  }
