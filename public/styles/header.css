@@ -1,3 +1,7 @@
+/**
+* Header Styling
+*/
+
 header {
   padding-top: 120px;
   height: 520px;
@@ -8,4 +12,4 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
+}

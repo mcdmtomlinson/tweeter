@@ -25,3 +25,12 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ /**
+* Styling for main
+*/
+.container {
+  width: 90%;
+  background-color: #f4f1ec;
+  margin-left: 5%;
+  margin-right: 5%;
