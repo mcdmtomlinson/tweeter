@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -55,13 +56,20 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <h1>Corp Speak - Lore Ipsum</h1>
-
-    <p>Leverage this synergistic dummy text generator to capitalize on the disruptive nature of corporate buzzword filled lorem ipsum for your next agile project.
-    
-      Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
-    </p>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form id = "post-tweet" method="POST" action="/tweets">
+          <div id="text-question">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+          </div>
+          <div id="tweet-send">
+            <button id="tweet-button" type="submit">Tweet</button>
+            <output id = "word-counter" name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
   </main>
-  
+
   </body>
 </html>
