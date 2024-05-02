@@ -32,8 +32,14 @@
   font-family: "bungee";
   background-color:#4056A1;
   color: white;
+  padding: 0.2em;
+  cursor: pointer;
 }
 
-#word-counter {
-  font-family: "bungee";
+.tweet-button:hover {
+  background-color: #4f6bce;
+}
+
+.counter-red {
+  color: red
 }
