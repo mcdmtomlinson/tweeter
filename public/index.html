@@ -58,14 +58,12 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form id = "post-tweet" method="POST" action="/tweets">
-          <div id="text-question">
-            <label for="tweet-text">What are you humming about?</label>
-            <textarea name="text" id="tweet-text"></textarea>
-          </div>
-          <div id="tweet-send">
-            <button id="tweet-button" type="submit">Tweet</button>
-            <output id = "word-counter" name="counter" class="counter" for="tweet-text">140</output>
+        <form class = "new-tweet-form" method="POST" action="/tweets">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" class="tweet-text"></textarea>
+          <div class="tweet-send">
+            <button class="tweet-button" type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>

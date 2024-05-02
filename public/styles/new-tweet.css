@@ -1,40 +1,34 @@
 /** Styling for New Tweet component
 */
 
-#post-tweet {
+.new-tweet-form {
   display: flex;
   flex-direction: column;
-}
 
-#text-question {
   display: flex;
-  flex-direction: row;
-  border-bottom: black solid 0.2em;
   font-family: "Source Sans 3", sans-serif;
   font-size:xx-large;
   font-weight: bold;
 }
 
-#tweet-text {
+.tweet-text {
   background-color: inherit;
   display: flex;
   flex-direction: row;
   border: none;
-  width: 60%;
-  height: 50%;
-  margin-left: 3%;
-  margin-right: 3%;
+  border-bottom: black solid 0.1em;
 }
 
-#tweet-send {
+.tweet-send {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-top: 1.25em;
   margin-bottom: 1.25em;
+  font-family: "bungee";
 }
 
-#tweet-button {
+.tweet-button {
   font-family: "bungee";
   background-color:#4056A1;
   color: white;
