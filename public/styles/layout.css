@@ -3,24 +3,21 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-html {
+ html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
   box-sizing: inherit;
 }
-
 /*
  * Global layout stuff
  */
-
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: "Source Sans 3", sans-serif;
 }
-
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
@@ -36,3 +33,4 @@ body {
   margin-right: 5%;
   background-color: inherit;
   margin: 0 auto;
+}
