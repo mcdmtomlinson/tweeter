@@ -20,12 +20,14 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
 .profile img {
   width: 2em;
   height: auto;
   margin: 2%;
+  margin-right: 10px;
 }
 
 .tweet p {
