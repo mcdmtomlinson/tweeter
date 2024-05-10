@@ -41,3 +41,18 @@
 .counter-red {
   color: red
 }
+
+#error-message {
+  color: #D8000C;
+  background-color: #FFBABA;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1%;
+}
+
+#error-message img {
+  width: 5%;
+  height: 5%;
+  margin: 10px;
+}

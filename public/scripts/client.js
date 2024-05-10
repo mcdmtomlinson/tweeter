@@ -71,24 +71,28 @@ const renderTweets = (tweets) => {
 const onSubmit = function(event) {
   event.preventDefault();
   const container = $("#tweet-container");
-  const serializedForm = $(this).serialize()
+  const errorContainer = $("#error-message");
+  const serializedForm = $(this).serialize();
   const tweetText = $(".tweet-text").val();
+  errorContainer.slideUp();
   if (isTweetValid()) {
+    const errorContainer = $("#error-message");
+    errorContainer.empty();
     $.post("/tweets", serializedForm)
-  .then(() => {
-    container.empty();
-  })
+    .then(() => {
+      container.empty();
+      loadTweets();
+    })
+    .then(() => {
+      $(this).find(".tweet-text").val("");
+      $(this).find(".counter").text("140");
+      $(this).find(".counter").removeClass("counter-red");
+      console.log('Tweet sent');
+    })
+    .catch(error => {
+      errorMessage(`Error submitting tweets: ${error.text}`);
+    })
   }
-  .then(() => {
-    $(this).find(".tweet-text").val("");
-    $(this).find(".counter").text("140");
-    $(this).find(".counter").removeClass("counter-red");
-    loadTweets();
-    console.log('Tweet sent');
-  })
-  .catch(error => {
-    alert('Error submitting tweets:', error);
-  })
 };
 
 /**
@@ -101,16 +105,29 @@ const onSubmit = function(event) {
  * @returns boolean
  */
 const isTweetValid = function() {
+  const tweetTooLong = "<img src='https://i.imgur.com/GnyDvKN.png'> <p>Oh dear! It looks like you're trying to squeeze in more than the allowed 140 characters. Our little birdies have delicate ears and can only handle so much chatter. Please trim down your tweet to keep our aviary harmonious!</p>"
+  const noTweet = "<img src='https://i.imgur.com/GnyDvKN.png'> <p>Oops! It seems like you're trying to send a tweet without any text. Our birds are quite picky eaters and they demand some words to chirp about. Please add some text to your tweet before sending it!</p>"
   const tweetText = $(".tweet-text").val().trim();
   if (tweetText === "") {
-    alert("Oops! It seems like you're trying to send a tweet without any text. Our birds are quite picky eaters and they demand some words to chirp about. Please add some text to your tweet before sending it!");
-    return false;
+    errorMessage(noTweet);
+      return false;
   }
   if (tweetText.length > 140) {
-    alert("Oh dear! It looks like you're trying to squeeze in more than the allowed 140 characters. Our little birdies have delicate ears and can only handle so much chatter. Please trim down your tweet to keep our aviary harmonious!");
+    errorMessage(tweetTooLong);
     return false;
   }
   return true;
+};
+
+/**
+ * Function that handles the behaviour of error messages.
+ * @param {*} errorText
+ */
+const errorMessage = function (errorText) {
+  const container = $("#error-message");
+  container.empty();
+  container.append(errorText);
+  container.slideDown();
 };
 
 /**
@@ -122,6 +139,6 @@ $.get("/tweets")
   renderTweets(data);
 })
 .catch(error) => {
-  alert('Error loading tweets:', error);
+  errorMessage(`Error loading tweets: ${error.text}`);
 }
 };
