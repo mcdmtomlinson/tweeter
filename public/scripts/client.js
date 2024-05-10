@@ -11,14 +11,17 @@ $(() => {
 
 /////////////////////HELPER FUNCTIONS ///////////////////////////////////
 
-const loadTweets = function () {
-  console.log("here")
-  $.get("/tweets")
-    .then((data) => {
-      renderTweets(data);
-    });
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
 };
 
+/**
+   * Function to create HTML tweets,
+   * @param {*} tweet
+   * @returns html
+   */
 const createTweetElement = (tweet) => {
   const newTweet = $(`
       <article class="tweet"> 
@@ -67,34 +70,31 @@ const renderTweets = (tweets) => {
  */
 const onSubmit = function(event) {
   event.preventDefault();
-
   const container = $("#tweet-container");
-  const serializedForm = $(this).serialize();
-  
+  const serializedForm = $(this).serialize()
   const tweetText = $(".tweet-text").val();
   if (isTweetValid()) {
     $.post("/tweets", serializedForm)
-    .then(() => {
-      container.empty();
-    })
-      .then(() => {
-        $(this).find(".tweet-text").val("");
-        $(this).find(".counter").text("140");
-        $(this).find(".counter").removeClass("counter-red");
-        loadTweets();
-        console.log('Tweet sent');
-      })
+  .then(() => {
+    container.empty();
+  })
   }
+  .then(() => {
+    $(this).find(".tweet-text").val("");
+    $(this).find(".counter").text("140");
+    $(this).find(".counter").removeClass("counter-red");
+    loadTweets();
+    console.log('Tweet sent');
+  })
+  .catch(error => {
+    alert('Error submitting tweets:', error);
+  })
 };
 
 /**
  * Function to validate if a tweet is valid based on character count.
  * @returns boolean
  */
-
-.catch(error) => {
-  alert('Error submitting tweets:', error);
-}
 
 /**
  * Function to validate if a tweet is valid based on character count.
