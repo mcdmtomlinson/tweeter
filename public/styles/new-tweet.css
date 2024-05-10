@@ -1,6 +1,10 @@
 /** Styling for New Tweet component
 */
 
+#form-toggle {
+  display: none;
+}
+
 .new-tweet-form {
   display: flex;
   flex-direction: column;
@@ -45,6 +49,7 @@
 #error-message {
   color: #D8000C;
   background-color: #FFBABA;
+  display: none;
   display: flex;
   flex-direction: row;
   align-items: center;

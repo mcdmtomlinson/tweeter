@@ -23,11 +23,90 @@ nav {
 
 .arrow-style {
   color: green;
-
  }
 
  .nav-tweet {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#new-tweet-btn {
+  background-color: inherit;
+  background:none;
+  outline: none;
+  border:none;
+  cursor: pointer;
  }
+
+
+   /* Bounce functionality from: https://codepen.io/vntopno1/pen/QxNagV */
+#new-tweet-btn i {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+ }
+
+ @keyframes bounce {
+	0%, 100%, 20%, 50%, 80% {
+		-webkit-transform: translateY(0);
+		-ms-transform:     translateY(0);
+		transform:         translateY(0)
+	}
+	40% {
+		-webkit-transform: translateY(-30px);
+		-ms-transform:     translateY(-30px);
+		transform:         translateY(-30px)
+	}
+	60% {
+		-webkit-transform: translateY(-15px);
+		-ms-transform:     translateY(-15px);
+		transform:         translateY(-15px)
+	}
+}
+
+#new-tweet-btn i:hover {
+  cursor: pointer;
+  animation-name: bounce;
+  -moz-animation-name: bounce;
+}
+
+#second-toggle-btn {
+  background-color: #630d63;
+  border-style: none;
+  border-radius: 50%;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 50px;
+  margin: 10px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+#second-toggle-btn:hover {
+  cursor: pointer;
+}
+
+#second-toggle-btn i {
+  color: white;
+
+}
+
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+
+
+  nav {
+    background-color: #4056A1;
+  }
+
+}

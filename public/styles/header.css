@@ -13,3 +13,11 @@
   align-items: center;
   flex-direction: column;
 }
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+
+
+  .user_header {
+    background-color: #4056A1;
+    color: white;
+  }
