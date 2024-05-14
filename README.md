@@ -31,7 +31,7 @@ This repository is the starter code for the project: Students will fork and clon
 - SASS: Utilize Sass for more efficient and maintainable styling.
 
 ## Screenshots 
-!["Homepage"]()
+!["Homepage"](https://github.com/mcdmtomlinson/tweeter/blob/master/public/images/Screenshot%202024-05-14%20at%204.22.52%E2%80%AFPM.png)
 
 
 
