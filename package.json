@@ -8,10 +8,7 @@
     "start": "node server/index.js",
     "local": "./node_modules/.bin/nodemon --watch server -e js server/index.js",
     "sass-watch": "sass sass:public/styles --watch --poll --no-source-map"
-    
-    
   },
-  
   "author": "Lighthouse Labs",
   "license": "ISC",
   "dependencies": {
@@ -19,7 +16,8 @@
     "chance": "^1.0.2",
     "express": "^4.13.4",
     "install": "^0.13.0",
-    "md5": "^2.1.0"
+    "md5": "^2.1.0",
+    "timeago": "^1.6.7"
   },
   "devDependencies": {
     "nodemon": "^1.9.2"

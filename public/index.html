@@ -3,97 +3,78 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
     <!-- External CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-      type="text/css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      type="text/css" />
 
-    <!-- Google font - Bungee & Source Sans 3  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
-      href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
-      rel="stylesheet"
-    />
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
+      rel="stylesheet">
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
 
     <!-- App CSS -->
-
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/e7059793e5.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.full.min.js" integrity="sha512-wb3lqal2VtYhmlPAr232VP+Zus676CFAEYdywxIUSxG6F/X9WhN6SpREkWUdwBvMpd6gCKuKTGHhdum6m1wOvQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <!-- Timeago library -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
-      integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    <!-- App JS -->
+    <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/composer-form-toggle.js"></script>
   </head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <body>
+
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span class="nav-title"><h1>tweeter</h1></span>
-
-      <button class="nav-tweet" id="new-tweet-btn">
-        <span><b>Write</b> a new tweet</span>
-        <i class="fa fa-solid fa-angles-down arrow-style"></i>
-      </button>
-    </nav>
-    <header class="user_header">
-      <div>
-        <img src="/images/profile-hex.png" />
+  
+      <span>tweeter</span>
+      <div class="writeTweet">
+        <span> <span class="bold"> Write </span> a new tweet</span>
+        <i class="fas fa-angle-double-down arrow"></i>
       </div>
-      <br />
+    </nav>
+    <header>
+      <div>
+        <img src="/images/profile-hex.png">
+      </div>
+      <br>
       <div>
         <h2>Monica Tomlinson</h2>
       </div>
     </header>
-
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <p id="error-message"></p>
-        <div id="form-toggle">
-          <form
-            id="submit-tweet"
-            class="new-tweet-form"
-            method="POST"
-            action="/tweets"
-          >
+        <form class="tweetSubmit" action="/tweets" method="POST">
+          <div class='errorText'></div>
+          <div class="newTweetTop">
             <label for="tweet-text">What are you humming about?</label>
             <textarea name="text" class="tweet-text"></textarea>
-            <footer class="tweet-send">
-              <button class="tweet-button" type="submit">Tweet</button>
-              <output name="counter" class="counter" for="tweet-text"
-                >140</output
-              >
-            </footer>
-          </form>
-        </div>
+          </div>
+          <div class="newTweetBottom">
+            <button type="submit">Tweet</button>
+            <output name="counter" class=" counter " for="tweet-text">140</output>
+          </div>
+        </form>
       </section>
-      <div id="container-second-toggle-btn">
-        <button id="second-toggle-btn">
-          <i class="fa fa-solid fa-angles-up arrow-style"></i>
-        </button>
-      </div>
-      <div id="tweet-container"></div>
+  
+      <section id="tweets-container">
+      </section>
     </main>
-    <script src="/scripts/composer-char-counter.js"></script>
-    <script type="module" src="/scripts/client.js"></script>
   </body>
-</html>
+
+  </html>

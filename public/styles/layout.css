@@ -3,47 +3,75 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-html {
+ html {
   box-sizing: border-box;
 }
-
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 /*
- * Global layout 
+ * Global layout stuff
  */
+
 body {
+  display: flex;
+  flex-direction: column;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: "Source Sans 3", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-/**
-* Styling for main
-*/
 .container {
-  width: 90%;
-  background-color: inherit;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: #f4f1ec;
 }
 
-/* /* Tablet Styles */
-@media only screen and (min-width: 768px) {
+/* ---- media queries ---- */
+
+@media (min-width: 1024px) {
   body {
-    display: flex;
-    padding-top: 120px;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: space-between;
   }
-  header {
-    margin: 5%;
+  body > header {
+    width: 33%;
+    margin: 220px 0px 0px 3rem;
   }
   .container {
-    margin: 5%;
+    width: 55%;
+    float: right;
+    margin: 200px 3rem 0px 0px;
+  }
+}
+
+@media (max-width: 1024px) {
+  nav {
+    background-color: #df8d41;
+    background-image: url("https://www.transparenttextures.com/patterns/black-thread.png");
+    height: 90px;
+  }
+  body > header {
+    margin-top: 90px;
+  }
+}
+
+@media (max-width: 570px) {
+  nav > span {
+    font-size: 2rem;
+  }
+  .writeTweet {
+    font-size: 1rem;
   }
 }

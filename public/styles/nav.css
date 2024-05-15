@@ -1,115 +1,60 @@
-/*
-* Styling for the nav bar
-*/
 nav {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   height: 120px;
-  width: 100vw;
-  background-color: #4056A1;
-  color: white;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
+  background: #40a184;
+  color: #ffffff;
+  padding: 1.5em;
   position: fixed;
-  top: 0;
+  top: 0%;
+  z-index: 1;
+  width: 100%;
 }
 
-.nav-title {
-  font-family: "Bungee";
+nav > span {
+  font-family: "Bungee", sans-serif;
+  font-size: 2em;
 }
 
-.arrow-style {
-  color: #630d63;
-}
-
-.nav-tweet {
+.writeTweet {
+  padding: 10px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  align-content: center;
+  font-size: 1em;
+  transition: 0.1s;
 }
 
-#new-tweet-btn {
-  background-color: inherit;
-  color: black;
-  padding: 0.2em;
-  cursor: pointer;
-  background: none;
-  outline: none;
-  border: none;
+.writeTweet:hover {
+  margin-bottom: 10px;
+}
+.writeTweet:hover > .arrow {
+  animation: MoveUpDown 1s linear infinite;
+  margin-top: 10px;
+}
+.writeTweet:active {
+  background-position: 0 10%;
+  margin-bottom: 0;
 }
 
-#new-tweet-btn:hover {
-  background-color: none;
+.bold {
+  font-weight: 600;
 }
-
-#new-tweet-btn i:hover {
-  animation-name: bounce;
-  -moz-animation-name: bounce;
+.arrow {
+  margin-top: 10px;
+  font-size: 20px;
+  color: red;
+  animation: MoveUpDown 1s linear 2;
 }
-
-/* Bounce functionality from: https://codepen.io/vntopno1/pen/QxNagV */
-#new-tweet-btn i {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-timing-function: ease-in-out;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
-}
-
-@keyframes bounce {
-  0%, 100%, 20%, 50%, 80% {
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
+@keyframes MoveUpDown {
+  0%,
+  50% {
     transform: translateY(0);
   }
-  40% {
-    -webkit-transform: translateY(-30px);
-    -ms-transform: translateY(-30px);
-    transform: translateY(-30px);
-  }
-  60% {
-    -webkit-transform: translateY(-15px);
-    -ms-transform: translateY(-15px);
-    transform: translateY(-15px);
-  }
-}
-#container-second-toggle-btn {
-  display: none;
-}
-
-#second-toggle-btn {
-  background-color: #630d63;
-  color: white;
-  padding: 0.2em;
-  cursor: pointer;
-  border-style: none;
-  border-radius: 50%;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 50px;
-  margin: 10px;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-}
-
-#second-toggle-btn:hover {
-  background-color: #884e88;
-}
-
-#second-toggle-btn i {
-  color: white;
-}
-
-/* Desktop styles */
-@media only screen and (min-width: 1024px) {
-  nav {
-    background-color: #369096;
+  50% {
+    transform: translateY(-10px);
   }
 }

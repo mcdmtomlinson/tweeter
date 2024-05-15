@@ -1,60 +1,52 @@
 /** Styling for New Tweet component
 */
-#form-toggle {
-  display: none;
+.submit-tweet {
+  font-family: 'Bungee', sans-serif;
+  background-color: rgb(68, 201, 86);
+  color: #FFFFFF;
+  border: 0;
 }
 
-.new-tweet-form {
-  display: flex;
-  flex-direction: column;
-  font-family: "Source Sans 3", sans-serif;
-  font-size: 1em;
-  font-weight: bold;
-  padding-top: 3%;
+.underline-hummer {
+  border-bottom: solid white;
+  width: -webkit-fill-available;
+  margin: 0 1.5em;
 }
 
-.tweet-text {
-  background-color: inherit;
+.submit-group {
   display: flex;
-  flex-direction: row;
-  border: none;
-  border-bottom: black solid 0.1em;
-}
-
-.tweet-send {
-  display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  margin-top: 1.25em;
-  margin-bottom: 1.25em;
-  font-family: "Bungee";
+  margin: 0 1.5em;
 }
 
-.tweet-button {
-  background-color: #4056A1;
-  color: white;
-  padding: 0.2em;
-  cursor: pointer;
-}
-.tweet-button :hover {
-  background-color: #4f6bce;
+.counter {
+  font-family: 'Bungee', sans-serif;
 }
 
-.counter-red {
-  color: #D8000C;
+.over-limit, .danger-colour {
+  color:#ff1a1a;
+  font-family: 'Bungee', sans-serif;
+}
+section.new-tweet {
+  background-color: whitesmoke;
+  margin: 30px 0;
 }
 
-#error-message {
-  color: #D8000C;
-  background-color: #FFBABA;
-  display: none;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: 1%;
+textarea {
+  border: none;
 }
-#error-message img {
-  width: 5%;
-  height: 5%;
-  margin: 10px;
+
+.stay-inside-text {
+  white-space: normal;
+  overflow: hidden;
+}
+
+.time {
+  border-bottom: purple;
+  margin-bottom: 1px;
+}
+
+article {
+  border-bottom: purple solid 3px;
+  margin-bottom: 2px;
 }

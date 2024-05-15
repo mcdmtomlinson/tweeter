@@ -1,23 +1,21 @@
-/**
-* Styling for header 
-*/
-.user_header {
+.site-header {
+  height: 400px;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding-top: 120px;
-  height: 520px;
-  width: 100vw;
-  background-color: #369096;
-  background-image: url("../images/brick-wall-dark.png");
-  margin-bottom: 1em;
 }
 
-/* Desktop styles */
-@media only screen and (min-width: 1024px) {
-  .user_header {
-    background-color: #369096;
-    color: white;
-  }
+#site-header h2 {
+  display: flex;
+  justify-content: center;
+  color: aqua
+}
+
+header#site-header.site-header {
+  margin-top: 120px;
+}
+
+header#site-header.site-header {
+  background-color: #473300;
+  background-image: url("https://www.transparenttextures.com/patterns/black-thread.png");
 }
